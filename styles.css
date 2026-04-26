@@ -1,9 +1,9 @@
-/* ================================
+/* =========================================
    Ezinne Malinda Nmadinachi Foundation
-   Professional Global Website Styles
-================================ */
+   Professional International Website CSS
+========================================= */
 
-/* CSS Reset */
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -35,23 +36,34 @@ ul {
   list-style: none;
 }
 
-/* Theme Variables */
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ========== VARIABLES ========== */
 :root {
   --primary: #0f766e;
   --primary-dark: #115e59;
   --secondary: #f59e0b;
+  --secondary-light: #fef3c7;
   --accent: #dcfce7;
   --dark: #102a43;
+  --deep-dark: #071923;
   --text: #334e68;
   --muted: #627d98;
   --light: #f8fafc;
   --white: #ffffff;
   --border: #e2e8f0;
+  --soft-border: rgba(255, 255, 255, 0.16);
   --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --soft-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   --radius: 22px;
+  --radius-large: 32px;
 }
 
-/* Layout */
+/* ========== GLOBAL LAYOUT ========== */
 .container {
   width: min(1120px, 92%);
   margin: 0 auto;
@@ -62,23 +74,21 @@ ul {
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 780px;
   margin-bottom: 48px;
-}
-
-.section-heading.center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 .eyebrow {
   color: var(--primary);
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.78rem;
   margin-bottom: 12px;
+}
+
+.eyebrow.light {
+  color: #bbf7d0;
 }
 
 h1,
@@ -90,8 +100,8 @@ h3 {
 
 h1 {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.7rem, 7vw, 5.7rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(2.65rem, 7vw, 5.6rem);
+  letter-spacing: -0.045em;
   margin-bottom: 24px;
 }
 
@@ -118,18 +128,19 @@ p {
   align-items: start;
 }
 
-/* Buttons */
+/* ========== BUTTONS ========== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 24px;
   border-radius: 999px;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 0.95rem;
   transition: all 0.25s ease;
   border: 2px solid transparent;
   cursor: pointer;
+  text-align: center;
 }
 
 .btn-primary {
@@ -163,7 +174,7 @@ p {
   color: var(--white);
 }
 
-/* Header */
+/* ========== HEADER ========== */
 .site-header {
   position: sticky;
   top: 0;
@@ -187,11 +198,11 @@ p {
 }
 
 .logo-mark {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, var(--primary), #16a34a);
   color: var(--white);
-  border-radius: 14px;
+  border-radius: 15px;
   display: grid;
   place-items: center;
   font-weight: 900;
@@ -202,7 +213,7 @@ p {
 .logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.18;
 }
 
 .logo-text strong {
@@ -218,13 +229,13 @@ p {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 22px;
 }
 
 .site-nav a {
   color: var(--text);
-  font-weight: 700;
-  font-size: 0.92rem;
+  font-weight: 800;
+  font-size: 0.9rem;
 }
 
 .site-nav a:hover {
@@ -281,7 +292,7 @@ p {
   top: 10px;
 }
 
-/* Hero */
+/* ========== HERO ========== */
 .hero {
   position: relative;
   min-height: calc(100vh - 82px);
@@ -317,10 +328,6 @@ p {
   padding: 90px 0;
 }
 
-.hero .eyebrow {
-  color: #bbf7d0;
-}
-
 .hero h1,
 .hero p {
   color: var(--white);
@@ -328,7 +335,7 @@ p {
 
 .hero-description {
   max-width: 720px;
-  font-size: 1.15rem;
+  font-size: 1.14rem;
   color: #e2e8f0 !important;
   margin-bottom: 32px;
 }
@@ -367,7 +374,7 @@ p {
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--dark);
   border-radius: var(--radius);
   padding: 36px;
@@ -384,7 +391,7 @@ p {
   color: var(--text);
 }
 
-/* Executive Summary */
+/* ========== EXECUTIVE SUMMARY ========== */
 .executive-summary {
   background: var(--light);
 }
@@ -434,7 +441,7 @@ p {
   color: var(--white);
 }
 
-/* About */
+/* ========== ABOUT ========== */
 .about-section {
   background: var(--white);
 }
@@ -443,7 +450,67 @@ p {
   margin-top: 18px;
 }
 
-/* Mission */
+/* ========== INSPIRATION SECTION ========== */
+.inspiration-section {
+  background: #ffffff;
+  position: relative;
+}
+
+.inspiration-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(220, 252, 231, 0.7), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(254, 243, 199, 0.65), transparent 32%);
+  pointer-events: none;
+}
+
+.inspiration-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.inspiration-image {
+  position: relative;
+}
+
+.inspiration-image::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 28px;
+  z-index: 0;
+}
+
+.inspiration-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+  filter: sepia(8%);
+}
+
+.inspiration-content p {
+  margin-bottom: 18px;
+}
+
+.inspiration-content .btn {
+  margin-top: 12px;
+}
+
+/* ========== MISSION ========== */
 .mission-section {
   background: #ecfdf5;
 }
@@ -458,7 +525,7 @@ p {
   background: var(--white);
   border-radius: var(--radius);
   padding: 34px;
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--soft-shadow);
   border: 1px solid var(--border);
 }
 
@@ -474,7 +541,7 @@ p {
   margin-bottom: 22px;
 }
 
-/* Programs */
+/* ========== PROGRAMS ========== */
 .programs-section {
   background: var(--white);
 }
@@ -508,7 +575,7 @@ p {
   color: var(--white);
 }
 
-/* Impact */
+/* ========== IMPACT ========== */
 .impact-section {
   background:
     linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(248, 250, 252, 0.96)),
@@ -527,7 +594,7 @@ p {
   padding: 24px;
   border-radius: 18px;
   border-left: 6px solid var(--primary);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--soft-shadow);
 }
 
 .impact-item span {
@@ -537,7 +604,7 @@ p {
   margin-bottom: 6px;
 }
 
-/* Governance */
+/* ========== GOVERNANCE ========== */
 .governance-section {
   background: var(--dark);
 }
@@ -545,10 +612,6 @@ p {
 .governance-section h2,
 .governance-section h3 {
   color: var(--white);
-}
-
-.governance-section .section-heading p {
-  color: #bbf7d0;
 }
 
 .governance-grid {
@@ -559,7 +622,7 @@ p {
 
 .governance-grid article {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--soft-border);
   border-radius: var(--radius);
   padding: 26px;
 }
@@ -568,14 +631,14 @@ p {
   color: #cbd5e1;
 }
 
-/* Support */
+/* ========== SUPPORT ========== */
 .support-section {
-  background: #fefce8;
+  background: var(--secondary-light);
 }
 
 .support-box {
   background: var(--white);
-  border-radius: 30px;
+  border-radius: var(--radius-large);
   padding: 46px;
   box-shadow: var(--shadow);
   display: flex;
@@ -596,7 +659,7 @@ p {
   min-width: 220px;
 }
 
-/* Policies */
+/* ========== POLICIES ========== */
 .policies-section {
   background: var(--light);
 }
@@ -615,7 +678,7 @@ p {
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
 }
 
-/* Contact */
+/* ========== CONTACT ========== */
 .contact-section {
   background: var(--white);
 }
@@ -637,7 +700,7 @@ p {
 
 .contact-details a {
   color: var(--primary);
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .contact-form {
@@ -650,7 +713,7 @@ p {
 .contact-form label {
   display: block;
   color: var(--dark);
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 8px;
 }
 
@@ -683,9 +746,9 @@ p {
   margin-top: 14px;
 }
 
-/* Footer */
+/* ========== FOOTER ========== */
 .site-footer {
-  background: #071923;
+  background: var(--deep-dark);
   color: var(--white);
   padding: 70px 0 28px;
 }
@@ -736,7 +799,17 @@ p {
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1020px) {
+  .site-nav {
+    gap: 14px;
+  }
+
+  .site-nav a {
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 980px) {
   .nav-toggle-label {
     display: block;
@@ -763,6 +836,7 @@ p {
   .hero-content,
   .summary-grid,
   .two-column,
+  .inspiration-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -784,15 +858,32 @@ p {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .inspiration-image img {
+    max-height: 500px;
+  }
 }
 
 @media (max-width: 680px) {
+  html {
+    scroll-padding-top: 78px;
+  }
+
   .section {
     padding: 70px 0;
   }
 
   .nav-container {
     height: 74px;
+  }
+
+  .site-nav {
+    top: 74px;
+  }
+
+  .logo-mark {
+    width: 46px;
+    height: 46px;
   }
 
   .logo-text small {
@@ -832,7 +923,35 @@ p {
     width: 100%;
   }
 
+  .inspiration-grid {
+    gap: 36px;
+  }
+
+  .inspiration-image::before {
+    top: 14px;
+    left: 14px;
+  }
+
+  .inspiration-image img {
+    border-radius: 22px;
+    max-height: 430px;
+  }
+
   .footer-bottom {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero-meta div {
+    padding: 16px;
   }
 }
